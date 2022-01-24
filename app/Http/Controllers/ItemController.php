@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\Broker;
 use App\Models\Item;
 use Illuminate\Http\Request;
-
 class ItemController extends Controller
 {
     /**
@@ -37,6 +36,13 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+       $request->validate([
+            'broker_name'=>'required',
+            'name'=>'required',
+            'original_qty'=>'required',
+            'remain_qty'=>'required',
+            'price'=>'required'
+        ]);
             $broker_name = $request->broker_name;
             $group = $request->group;
              //dd($group);

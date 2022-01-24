@@ -36,8 +36,6 @@
                   @csrf
                   @method('PATCH')
                 <div class="card-body">
-               
-                  
                     <div class="form-group">
                         <label for="category">Category</label>
                         <select name="broker_name" id="broker_name" class="form-control">
@@ -47,28 +45,39 @@
                         >{{$broker->name}}</option>
                         @endforeach
                       </select>
+                      @error('broker_name')
+                        <span class="text-danger"><small>{{$message}}</small></span>
+                        @enderror
                     </div>
                     <div class="form-group">
                     <label for="name">Item Name</label>
                         <input type="text" name="name" value="{{$item->name}}"  class="form-control"/>
+                        @error('name')
+                        <span class="text-danger"><small>{{$message}}</small></span>
+                        @enderror
                     </div>
                     <div class="form-group">
                     <label for="original_qty">Original Qty</label>
                         <input type="number" name="original_qty" value="{{$item->original_qty}}" required class="form-control"/>
+                        @error('original_qty')
+                        <span class="text-danger"><small>{{$message}}</small></span>
+                        @enderror
                     </div>
                     <div class="form-group">
                     <label for="remain_qty">Remain Qty</label>
                         <input type="number" name="remain_qty" value="{{$item->remain_qty}}" required class="form-control"/>
+                        @error('remain_qty')
+                        <span class="text-danger"><small>{{$message}}</small></span>
+                        @enderror
                     </div>
                
                     <div class="form-group">
                     <label for="price">Price</label>
-                        <input type="number" name="price" value="{{$item->price}}"  class="form-control"/>
+                        <input type="number" name="price" value="{{$item->price}}"  required class="form-control"/>
+                        @error('price')
+                        <span class="text-danger"><small>{{$message}}</small></span>
+                        @enderror
                     </div>
-                
-                   
-                 
-               
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
