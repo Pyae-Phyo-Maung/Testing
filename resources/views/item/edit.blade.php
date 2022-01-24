@@ -37,8 +37,9 @@
                   @method('PATCH')
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="category">Category</label>
+                        <label for="broker_name">Broker Name</label>
                         <select name="broker_name" id="broker_name" class="form-control">
+                        <option value="" selected disabled >Choose broker name</option>
                         @foreach($brokers as $broker)
                         <option value="{{$broker->id}}"
                         {{$item->broker_id == $broker->id?'selected':''}}

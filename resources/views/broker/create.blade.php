@@ -62,6 +62,7 @@
                     <div class="form-group">
                         <label for="broker_type">Broker Type</label>
                         <select class="form-control" name="broker_type" id="broker_type" required >
+                        <option value="" selected disabled >Choose broker type</option>
                           <option value="buyer">buyer</option>
                           <option value="seller">seller</option>
                         </select>

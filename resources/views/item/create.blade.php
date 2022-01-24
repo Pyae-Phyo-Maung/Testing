@@ -39,7 +39,8 @@
                   <label for="broker_name" style="margin-left:200px;">Broker Name</label>
                   </div>
                   <div class="col-md-4">
-                  <select name="broker_name" id="broker_name" class="form-control">
+                  <select name="broker_name" id="broker_name" required class="form-control">
+                  <option value="" selected disabled >Choose broker name</option>
                     @foreach($brokers as $broker)
                     <option value="{{$broker->id}}">{{$broker->name}}</option>
                     @endforeach
@@ -56,16 +57,14 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="name">Item Name</label>
-                        <input type="text" name="name" value="{{old('name')}}"  class="form-control"/>
-                        @error('name')
-                        <span class="text-danger"><small>{{$message}}</small></span>
-                        @enderror
+                        <input type="text" name="name" value="{{old('name')}}" required class="form-control"/>
+                       
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="original_qty">Original Qty</label>
-                        <input type="number" name="original_qty" value="{{old('original_qty')}}" class="form-control"/>
+                        <input type="number" name="original_qty" value="{{old('original_qty')}}" required class="form-control"/>
                        
                       </div>
                     </div>
@@ -73,7 +72,7 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" name="price" value="{{old('price')}}"  class="form-control"/>
+                        <input type="number" name="price" value="{{old('price')}}" required class="form-control"/>
                         
                       </div>
                     </div>
